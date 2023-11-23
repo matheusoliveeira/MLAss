@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            textBoxFeedback = new TextBox();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             comboBox1 = new ComboBox();
-            label1 = new Label();
-            label2 = new Label();
+            lblguess = new Label();
+            lblconfidence = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -46,12 +46,12 @@
             label11 = new Label();
             SuspendLayout();
             // 
-            // textBox1
+            // textBoxFeedback
             // 
-            textBox1.Location = new Point(121, 44);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(603, 23);
-            textBox1.TabIndex = 0;
+            textBoxFeedback.Location = new Point(121, 44);
+            textBoxFeedback.Name = "textBoxFeedback";
+            textBoxFeedback.Size = new Size(603, 23);
+            textBoxFeedback.TabIndex = 0;
             // 
             // button1
             // 
@@ -71,6 +71,7 @@
             button2.TabIndex = 2;
             button2.Text = "Re-Train";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -83,27 +84,29 @@
             // 
             // comboBox1
             // 
+            comboBox1.DisplayMember = "0,1";
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "0", "1" });
             comboBox1.Location = new Point(121, 222);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(105, 23);
             comboBox1.TabIndex = 4;
             // 
-            // label1
+            // lblguess
             // 
-            label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Location = new Point(624, 101);
-            label1.Name = "label1";
-            label1.Size = new Size(100, 23);
-            label1.TabIndex = 5;
+            lblguess.BorderStyle = BorderStyle.FixedSingle;
+            lblguess.Location = new Point(624, 101);
+            lblguess.Name = "lblguess";
+            lblguess.Size = new Size(100, 23);
+            lblguess.TabIndex = 5;
             // 
-            // label2
+            // lblconfidence
             // 
-            label2.BorderStyle = BorderStyle.FixedSingle;
-            label2.Location = new Point(624, 145);
-            label2.Name = "label2";
-            label2.Size = new Size(100, 23);
-            label2.TabIndex = 6;
+            lblconfidence.BorderStyle = BorderStyle.FixedSingle;
+            lblconfidence.Location = new Point(624, 145);
+            lblconfidence.Name = "lblconfidence";
+            lblconfidence.Size = new Size(100, 23);
+            lblconfidence.TabIndex = 6;
             // 
             // label3
             // 
@@ -197,13 +200,13 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(lblconfidence);
+            Controls.Add(lblguess);
             Controls.Add(comboBox1);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxFeedback);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -213,13 +216,13 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox textBoxFeedback;
         private Button button1;
         private Button button2;
         private Button button3;
         private ComboBox comboBox1;
-        private Label label1;
-        private Label label2;
+        private Label lblguess;
+        private Label lblconfidence;
         private Label label3;
         private Label label4;
         private Label label5;
